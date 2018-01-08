@@ -1,3 +1,4 @@
+CONFIG_MODULE_SIG=n
 ccflags-y += -I$(src)
 
 ifneq ($(KERNELRELEASE),)

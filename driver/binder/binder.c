@@ -3702,9 +3702,10 @@ static void __exit binder_exit(void)
 {
 	int ret;
 
-	ret = misc_deregister(&binder_miscdev);
-	if (unlikely(ret))
-		pr_err("failed to unregister misc device!\n");
+	//ret = misc_deregister(&binder_miscdev);linux kernel API changes
+	misc_deregister(&binder_miscdev);
+	//if (unlikely(ret))
+	//	pr_err("failed to unregister misc device!\n");
 
 	if (binder_deferred_workqueue)
 		destroy_workqueue(binder_deferred_workqueue);
